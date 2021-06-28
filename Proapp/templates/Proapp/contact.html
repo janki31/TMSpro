@@ -1,0 +1,70 @@
+{% extends 'Proapp/basic.html' %}
+{% block body%}
+{% load static %}
+
+ <!-- Contact -->
+    <div id="contact" class="form-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <div class="section-title">CONTACT</div>
+                        <h2>Get In Touch Using The Form</h2>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="address"><i class="fas fa-map-marker-alt"></i><strong>Meldi-shikotar mataji temple, Village:Sadanapura</strong> </li>
+                              <li class="address"><i class="fas fa-map-marker-alt"></i> <strong> Po: Samarkha, Ta:Di:Anand 388360</strong></li>
+                            <li><i class="fas fa-phone"></i><a href="tel:9998953930">+91 9998953930</a></li>
+                            <li><i class="fas fa-phone"></i><a href="tel:9428153372">+91 9428153372</a></li>
+                            <li><i class="fas fa-envelope"></i><a href="mailto:shreemeldi1641992@gmail.com">shreemeldi1641992@gmail.com</a></li>
+                        </ul>
+
+                        <!--<h3>Follow Our On Social Media</h3>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>-->
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+
+                    <!-- Contact Form -->
+                    <form id="contactForm" action="/contact/" method="post" data-toggle="validator" data-focus="false">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="cname" name="cname" required>
+                            <label class="label-control" for="cname">Name</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-input" id="cemail" name="cemail" required>
+                            <label class="label-control" for="cemail">Email</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="cphone" name="cphone" required>
+                            <label class="label-control" for="cphone">Mobile Number</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-textarea" id="cmessage" name="cmessage" required></textarea>
+                            <label class="label-control" for="cmessage">Your message</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">SUBMIT MESSAGE</button>
+                        </div>
+                        <!--<div class="form-message">
+                            <div id="cmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>-->
+                    </form>
+                    <!-- end of contact form -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form-2 -->
+    <!-- end of contact -->
+{% endblock %}

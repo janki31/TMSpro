@@ -1,0 +1,83 @@
+{% extends 'Proapp/basic.html' %}
+{% block css %}
+.required
+{
+    color: red;
+}
+{% endblock %}
+{% block body%}
+{% load static %}
+
+  <div id="facilities" class="basic-1">
+    <!-- end of navbar -->
+    <div class="container my-3">
+      <hr>
+    <center><h1>Pooja Booking</h1></center>
+      <hr>
+        <form method="post">
+          {% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputfname">First Name</label><span class="required">*</span>
+      <input type="text" class="form-control" id="inputfname" name="fname" required>
+    </div>
+      <div class="form-group col-md-4">
+      <label for="inputmname">Middle Name</label><span class="required">*</span>
+      <input type="text" class="form-control" id="inputmname" name="mname" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputlname">Last Name</label><span class="required">*</span>
+      <input type="text" class="form-control" id="inputlname" name="lname" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputAddress">Address</label><span class="required">*</span>
+    <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St" required>
+  </div>
+           <div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="inputemail">Email Id</label><span class="required">*</span>
+    <input type="email" class="form-control" id="inputemail" name="emailid" required>
+  </div>
+          <div class="form-group col-md-6">
+    <label for="inputno">No of People</label><span class="required">*</span>
+    <input type="text" class="form-control" id="inputno" name="nopeople" required>
+  </div>
+           </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputdate">Date</label><span class="required">*</span>
+      <input type="date" class="form-control" id="inputdate" name="bdate" required>
+    </div>
+      <div class="form-group col-md-6">
+      <label for="inputtime">Time</label><span class="required">*</span>
+      <input type="time" class="form-control" id="inputtime" name="btime" required>
+    </div>
+  </div>
+            <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputcat">Pooja Category</label><span class="required">*</span>
+      <select id="inputcat" class="form-control" name="pcategory" required>
+        <option selected>Choose...</option>
+        <option>Navchandi Pooja</option>
+        <option>Abhishek</option>
+      </select>
+    </div>
+                <div class="form-group col-md-4">
+      <label for="inputcity">City</label><span class="required">*</span>
+      <input type="text" class="form-control" id="inputcity" name="city" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputZip">Zip</label><span class="required">*</span>
+      <input type="text" class="form-control" id="inputZip" name="zip" required>
+    </div>
+            </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    </div>
+  </div>
+
+{% endblock %}

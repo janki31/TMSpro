@@ -1,0 +1,69 @@
+{% extends 'Proapp/basic.html' %}
+{% block css %}
+.required
+{
+    color: red;
+}
+{% endblock %}
+{% block body%}
+{% load static %}
+
+  <div id="facilities" class="basic-1">
+    <!-- end of navbar -->
+    <div class="container my-3">
+        <hr>
+    <center><h1>Fund Donation</h1></center>
+      <hr>
+        <form method="post">
+            {% csrf_token %}
+ <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputfname">Donor First Name</label><span class="required">*</span>
+      <input type="text" class="form-control" id="inputfname" name="fname" required>
+    </div>
+      <div class="form-group col-md-4">
+      <label for="inputmname">Donor Middle Name</label><span class="required">*</span>
+      <input type="text" class="form-control" id="inputmname" name="mname" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputlname">Donor Last Name</label><span class="required">*</span>
+      <input type="text" class="form-control" id="inputlname" name="lname" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label><span class="required">*</span>
+    <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St" required>
+  </div>
+            <div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="inputemail">Email Id</label><span class="required">*</span>
+    <input type="email" class="form-control" id="inputemail" name="emailid" required>
+  </div>
+                <div class="form-group col-md-6">
+    <label for="inputmobno">Mobile No</label><span class="required">*</span>
+    <input type="tel" class="form-control" id="inputmobno" name="mobno" required>
+  </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+      <label for="inputcity">City</label><span class="required">*</span>
+      <input type="text" class="form-control" id="inputcity" name="city" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputZip">Zip</label><span class="required">*</span>
+      <input type="text" class="form-control" id="inputZip" name="zip" required>
+    </div>
+            </div>
+
+                <div class="form-group">
+    <label for="inputamount">Amount to be Donate</label><span class="required">*</span>
+    <input type="number" class="form-control" id="inputamount" name="damount" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    </div>
+  </div>
+
+{% endblock %}
